@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Website Live Status Checker",
+  "version": "1.0",
+  "description": "Check the current status of any website you're visiting.",
+  "permissions": ["tabs", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon64.png",
+      "128": "icon128.png"
+    }
+  }
+}

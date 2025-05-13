@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Status</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 15px;
+      background: #f9f9f9;
+      width: 300px;
+    }
+    h2 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .label {
+      font-weight: bold;
+      margin-top: 5px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .value {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .up { 
+      color: #2ecc71; 
+      font-weight: bold;
+    }
+    .down { 
+      color: #e74c3c; 
+      font-weight: bold;
+    }
+    .issue { 
+      color: #f39c12; 
+      font-weight: bold;
+    }
+    #loader {
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #3498db;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      animation: spin 1s linear infinite;
+    }
+    .status-icon {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+    .status-pulse {
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+    .status-container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .status-badge {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .badge-up {
+      background-color: #2ecc71;
+      box-shadow: 0 0 5px #2ecc71;
+      animation: pulse 1.5s infinite;
+    }
+    .badge-down {
+      background-color: #e74c3c;
+      box-shadow: 0 0 5px #e74c3c;
+      animation: pulse 1.5s infinite;
+    }
+    .badge-issue {
+      background-color: #f39c12;
+      box-shadow: 0 0 5px #f39c12;
+      animation: pulse 1.5s infinite;
+    }
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+    }
+    .material-icons {
+      font-size: 16px;
+    }
+    .refresh-btn {
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+    .refresh-btn:hover {
+      background: #2980b9;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <h2>
+    <i class="material-icons" style="color: #3498db;">public</i>
+    Website Live Status
+  </h2>
+  <div class="status-box" id="statusBox">
+    <div id="loader">
+      <div class="spinner"></div>
+      <span>Checking website status...</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
